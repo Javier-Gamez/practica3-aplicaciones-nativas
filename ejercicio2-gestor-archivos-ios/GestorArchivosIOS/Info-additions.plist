@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Claves a fusionar en el Info.plist que Xcode genera automáticamente para
+  este target (Xcode 15+ usa "Info.plist generado"; si tu proyecto tiene un
+  Info.plist físico, copia estas entradas ahí; si no, agrégalas en
+  Target > Info > Custom iOS Target Properties).
+-->
+<plist version="1.0">
+<dict>
+    <!-- Expone los documentos de la app en la app Archivos del sistema -->
+    <key>UIFileSharingEnabled</key>
+    <true/>
+    <key>LSSupportsOpeningDocumentsInPlace</key>
+    <true/>
+</dict>
+</plist>
