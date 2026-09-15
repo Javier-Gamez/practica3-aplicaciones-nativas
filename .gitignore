@@ -1,0 +1,27 @@
+# Flutter / Dart
+**/ejercicio4-flutter-gestor-archivos/.dart_tool/
+**/ejercicio4-flutter-gestor-archivos/.flutter-plugins
+**/ejercicio4-flutter-gestor-archivos/.flutter-plugins-dependencies
+**/ejercicio4-flutter-gestor-archivos/build/
+**/ejercicio4-flutter-gestor-archivos/android/local.properties
+**/ejercicio4-flutter-gestor-archivos/android/.gradle/
+**/ejercicio4-flutter-gestor-archivos/android/app/.cxx/
+**/*.g.dart
+
+# Gradle / Kotlin (Ejercicio 5)
+**/ejercicio5-kmp-camara-microfono/**/.gradle/
+**/ejercicio5-kmp-camara-microfono/**/build/
+**/ejercicio5-kmp-camara-microfono/**/local.properties
+**/ejercicio5-kmp-camara-microfono/**/.kotlin/
+
+# Xcode (Ejercicios 2, 3, 5-iOS)
+**/*.xcodeproj/xcuserdata/
+**/*.xcworkspace/xcuserdata/
+**/DerivedData/
+**/*.xcuserstate
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
