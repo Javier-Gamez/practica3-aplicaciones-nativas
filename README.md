@@ -16,12 +16,12 @@ Unidad de aprendizaje: Desarrollo de aplicaciones móviles nativas
 
 | Carpeta | Ejercicio | Estado |
 |---|---|---|
-| [`ejercicio1-entorno-macos/`](ejercicio1-entorno-macos) | 1. Instalación de macOS/Xcode (MacOS-Docker) | Guía + plantillas listas, instalación pendiente en macOS |
+| [`ejercicio1-entorno-macos/`](ejercicio1-entorno-macos) | 1. Instalación de macOS/Xcode (MacOS-Docker) | Specs de la PC documentadas; instalación de macOS-Docker/Xcode pendiente |
 | [`ejercicio2-gestor-archivos-ios/`](ejercicio2-gestor-archivos-ios) | 2. Gestor de archivos iPhone (Swift/SwiftUI) | Código completo, pendiente crear `.xcodeproj` y compilar en Xcode |
 | [`ejercicio3-camara-microfono-ios/`](ejercicio3-camara-microfono-ios) | 3. Cámara y micrófono iPhone (Swift/AVFoundation) | Código completo, pendiente crear `.xcodeproj` y compilar en Xcode |
-| [`ejercicio4-flutter-gestor-archivos/`](ejercicio4-flutter-gestor-archivos) | 4. Multiplataforma Flutter (Opción A: gestor de archivos) | **Compilado y probado** en emulador Android |
-| [`ejercicio5-kmp-camara-microfono/`](ejercicio5-kmp-camara-microfono) | 5. Multiplataforma Kotlin Multiplatform (Opción B: cámara/mic) | **Lado Android compilado y probado** en emulador; lado iOS pendiente de Xcode |
-| [`docs/`](docs) | Bitácora e informe | Plantillas listas para llenar |
+| [`ejercicio4-flutter-gestor-archivos/`](ejercicio4-flutter-gestor-archivos) | 4. Multiplataforma Flutter (Opción A: gestor de archivos) | **Compilado, probado en emulador y APK release generado** (Android); iOS pendiente de Xcode |
+| [`ejercicio5-kmp-camara-microfono/`](ejercicio5-kmp-camara-microfono) | 5. Multiplataforma Kotlin Multiplatform (Opción B: cámara/mic) | **Lado Android compilado, probado y APK release generado**; lado iOS pendiente de Xcode |
+| [`docs/`](docs) | Bitácora e informe | Bitácora con datos reales; informe aún por redactar |
 
 ## Por qué esta estructura
 
@@ -43,12 +43,12 @@ Los ejercicios 4 y 5 sí se pudieron compilar parcialmente en esta máquina:
   módulo iOS (framework "Shared" + app SwiftUI) está escrito pero requiere Xcode para compilarse
   y enlazarse.
 
-## Próximos pasos del equipo
+## Próximos pasos
 
-1. Completar el Ejercicio 1: comparar specs, instalar macOS-Docker en la mejor PC, documentar en
-   [`ejercicio1-entorno-macos/`](ejercicio1-entorno-macos) y [`docs/bitacora.md`](docs/bitacora.md).
+1. Instalar macOS-Docker (o conseguir acceso a una Mac) y Xcode — ver la advertencia de espacio en
+   disco en [`ejercicio1-entorno-macos/especificaciones-equipo.md`](ejercicio1-entorno-macos/especificaciones-equipo.md)
+   antes de empezar.
 2. Con Xcode disponible: crear los proyectos de los ejercicios 2, 3 y 5 (parte iOS), compilar,
    probar en simulador/dispositivo y tomar las capturas para el informe.
 3. Llenar [`docs/informe/`](docs/informe) con capturas, pruebas realizadas y conclusiones.
-4. Medir tamaños de APK/IPA y completar la tabla comparativa Flutter vs KMP en
-   [`ejercicio5-kmp-camara-microfono/README.md`](ejercicio5-kmp-camara-microfono/README.md#55-tabla-comparativa).
+4. Seguir registrando sesiones reales en [`docs/bitacora.md`](docs/bitacora.md) conforme avances.

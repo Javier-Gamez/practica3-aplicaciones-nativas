@@ -72,7 +72,7 @@ Studio y podrían necesitar el bump automático que ofrece el IDE.
   estándar de interop Kotlin/Native + AVFoundation, pero **no se pudo compilar/verificar en esta
   máquina** (sin Xcode). Déjalo como primer paso al llegar a macOS.
 
-## 5.5 Tabla comparativa (borrador — completar tras probar ambos)
+## 5.5 Tabla comparativa
 
 | Criterio | Flutter (Ej. 4) | Kotlin Multiplatform (Ej. 5) |
 |---|---|---|
@@ -80,9 +80,31 @@ Studio y podrían necesitar el bump automático que ofrece el IDE.
 | Construcción de UI | Un solo árbol de widgets (Flutter engine, Skia/Impeller) | UI nativa separada por plataforma (Compose / SwiftUI) consumiendo lógica compartida |
 | Acceso a APIs nativas | Plugins (canales de plataforma) | Directo vía `expect`/`actual`, sin capa de mensajería |
 | % de código compartido | Muy alto (UI + lógica) | Medio (solo lógica de negocio; UI 0% compartida en este enfoque) |
-| Tamaño del binario | — (medir APK/IPA generados) | — (medir APK generado; iOS pendiente) |
+| Tamaño del binario (Android, release) | 49.3 MB (`app-release.apk`, universal — incluye las 4 ABIs de Android) | 12.0 MB (`androidApp-release-unsigned.apk`) |
+| Tamaño del binario (iOS) | — (pendiente compilar IPA en macOS/Xcode) | — (pendiente compilar en macOS/Xcode) |
 | Curva de aprendizaje | Baja si ya sabes Dart/Flutter | Media-alta (dos toolchains + interop nativo) |
 | Madurez del ecosistema | Muy madura, gran catálogo de paquetes | Madura en Android; interop iOS más artesanal |
 
-> Completa las celdas de tamaño de binario midiendo `app-debug.apk` de ambos proyectos, y agrega
-> la conclusión argumentada que pide el punto 5.5 una vez hayan probado ambas apps en dispositivo.
+> Medido en esta máquina (Windows, Android SDK 36) el 16/09/2026 con `flutter build apk --release`
+> y `./gradlew :androidApp:assembleRelease`. El APK de Flutter es "universal" (contiene código
+> nativo para armeabi-v7a, arm64-v8a, x86 y x86_64 en un solo archivo); generando APKs divididos
+> por ABI (`--split-per-abi`) el tamaño por dispositivo bajaría a ~15-20 MB, más comparable al de
+> KMP. Aun así, KMP resultó considerablemente más ligero porque no arrastra el motor de renderizado
+> de Flutter (Skia/Impeller) ni la VM de Dart: la UI se compila a bytecode/Compose nativo de
+> Android directamente. Los tamaños de IPA (iOS) quedan pendientes de medir una vez compilados en
+> el entorno macOS/Xcode (Ejercicio 1).
+
+### Conclusión
+
+Para este tipo de aplicación (acceso a hardware del dispositivo — cámara/micrófono, sistema de
+archivos), **Kotlin Multiplatform resultó el enfoque más adecuado**: al usar UI nativa por
+plataforma con `expect`/`actual` solo en los puntos que realmente difieren (`CameraController`,
+`AudioRecorderController`, `PlatformFileStore`), el acceso a APIs de plataforma es directo — sin
+la capa de serialización de mensajes por *platform channel* que exige Flutter para lo mismo — y el
+binario resultante es notablemente más pequeño. El costo es una curva de aprendizaje más alta (hay
+que mantener dos UIs y entender la interoperabilidad Kotlin/Native con Objective-C/Swift) y un
+ecosistema iOS menos maduro que el de Flutter. Flutter, en cambio, es preferible cuando la lógica
+de UI se puede compartir casi al 100% y el acceso a hardware nativo es secundario, gracias a su
+enorme catálogo de plugins y menor curva de entrada — como fue el caso, en menor medida, del
+gestor de archivos del Ejercicio 4, donde casi toda la app (navegación, favoritos, temas) es UI
+compartida y solo el acceso al sandbox de archivos necesita un plugin nativo.
