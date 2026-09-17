@@ -8,8 +8,9 @@ Unidad de aprendizaje: Desarrollo de aplicaciones móviles nativas
 
 | Nombre completo | Boleta |
 |---|---|
-| _(completar)_ | |
-| _(completar)_ | |
+| Javier de Jesús Gamez Rosas | 2022630007 |
+
+> Práctica realizada de forma individual (equipo de un solo integrante).
 
 ## Estructura del repositorio
 

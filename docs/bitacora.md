@@ -3,17 +3,19 @@
 > Llenar con las sesiones reales del equipo. Cada fila = una reunión (presencial o remota).
 > El historial de commits de GitHub debe ser consistente con estas fechas y con quién participó.
 
+Práctica realizada de forma individual (equipo de un solo integrante).
+
 | # | Fecha | Hora inicio | Hora término | Modalidad | Integrantes presentes | Computadora utilizada | Actividades realizadas |
 |---|---|---|---|---|---|---|---|
-| 1 | | | | Presencial / Remota | | | |
+| 1 | 15/09/2026 | _(sin registrar)_ | _(sin registrar)_ | Individual | Javier de Jesús Gamez Rosas | PC propia (Windows) | Estructura inicial del repo; código de los ejercicios 2 (gestor de archivos iOS) y 3 (cámara/micrófono iOS) en Swift; app Flutter del ejercicio 4 y proyecto Kotlin Multiplatform del ejercicio 5, ambos compilados y probados en emulador Android |
 | 2 | | | | | | | |
 | 3 | | | | | | | |
 
 ## Responsable del equipo utilizado para macOS
 
-- **Nombre completo:** ___
-- **Boleta:** ___
-- **Justificación de la elección:** (specs comparadas en `ejercicio1-entorno-macos/especificaciones-equipo.md`)
+- **Nombre completo:** Javier de Jesús Gamez Rosas
+- **Boleta:** 2022630007
+- **Justificación de la elección:** único integrante del equipo; pendiente comparar specs formalmente en `ejercicio1-entorno-macos/especificaciones-equipo.md` antes de instalar macOS-Docker.
 
 ## Evidencia de reuniones
 
